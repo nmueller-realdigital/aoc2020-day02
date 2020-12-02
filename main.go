@@ -19,6 +19,7 @@ func run() error {
 	if err != nil {
 		return err
 	}
+	defer file.Close()
 	entries, err := aoc.ReadAndParseInput(file)
 	if err != nil {
 		return err
