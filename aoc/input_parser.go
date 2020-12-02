@@ -35,7 +35,7 @@ func ParseRow(row string) (PasswordEntry, error) {
 		return PasswordEntry{}, err
 	}
 	matches := re.FindStringSubmatch(row)
-	if len(matches) == 0 {
+	if matches == nil {
 		return PasswordEntry{}, ErrPatternDoesNotMatch
 	}
 	minCount, _ := strconv.Atoi(matches[1])
